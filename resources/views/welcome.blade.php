@@ -54,7 +54,7 @@
             <!-- Right Content (Cards) -->
             <div class="lg:col-span-7 space-y-5">
                 <!-- Item 1 -->
-                <div class="bg-kb-dark text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300">
+                <div class="bg-batik-pattern text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300">
                     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-kb-orange text-kb-orange">
                         <ion-icon name="brush-outline" class="text-3xl"></ion-icon>
                     </div>
@@ -65,7 +65,7 @@
                 </div>
 
                 <!-- Item 2 -->
-                <div class="bg-kb-dark text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300 lg:ml-8">
+                <div class="bg-batik-pattern text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300 lg:ml-8">
                     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-kb-orange text-kb-orange">
                         <ion-icon name="people-outline" class="text-3xl"></ion-icon>
                     </div>
@@ -76,7 +76,7 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="bg-kb-dark text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300">
+                <div class="bg-batik-pattern text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300">
                     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-kb-orange text-kb-orange">
                         <ion-icon name="school-outline" class="text-3xl"></ion-icon>
                     </div>
