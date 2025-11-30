@@ -56,7 +56,7 @@
                 <!-- Item 1 -->
                 <div class="bg-batik-pattern text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300">
                     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-kb-orange text-kb-orange">
-                        <ion-icon name="brush-outline" class="text-3xl"></ion-icon>
+                        <img src="https://i.ibb.co.com/mVrgp7DM/image-59.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     </div>
                     <div>
                         <h3 class="font-bold text-lg inline-block border-b border-white/50 pb-1 mb-1">Warisan yang Terjaga</h3>
@@ -67,7 +67,7 @@
                 <!-- Item 2 -->
                 <div class="bg-batik-pattern text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300 lg:ml-8">
                     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-kb-orange text-kb-orange">
-                        <ion-icon name="people-outline" class="text-3xl"></ion-icon>
+                        <img src="https://i.ibb.co.com/pBYtfv16/image-62.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     </div>
                     <div>
                         <h3 class="font-bold text-lg inline-block border-b border-white/50 pb-1 mb-1">Harmoni Generasi</h3>
@@ -78,7 +78,7 @@
                 <!-- Item 3 -->
                 <div class="bg-batik-pattern text-white p-6 rounded-[2rem] flex items-center gap-6 shadow-lg hover:translate-x-2 transition duration-300">
                     <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-kb-orange text-kb-orange">
-                        <ion-icon name="school-outline" class="text-3xl"></ion-icon>
+                        <img src="https://i.ibb.co.com/9kQvytwL/image-63.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     </div>
                     <div>
                         <h3 class="font-bold text-lg inline-block border-b border-white/50 pb-1 mb-1">Inspirasi Akademik</h3>
@@ -101,12 +101,12 @@
                 </p>
             </div>
 
-            <!-- Scrolling Cards -->
-            <div class="flex gap-6 overflow-x-auto pb-6 no-scrollbar snap-x">
+            <!-- Scrolling Cards (ADDED: id="galleryContainer" & scroll-smooth) -->
+            <div id="galleryContainer" class="flex gap-6 overflow-x-auto pb-6 no-scrollbar snap-x scroll-smooth">
                 
                 <!-- Card 1: Mural -->
                 <div class="min-w-[280px] h-[400px] relative rounded-3xl overflow-hidden snap-start group cursor-pointer shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?q=80&w=600" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <img src="https://i.ibb.co.com/ymGzcSmn/Rectangle-116.png?q=80&w=600" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6">
                         <h3 class="text-2xl font-bold">Mural</h3>
@@ -117,7 +117,7 @@
 
                 <!-- Card 2: Lukisan -->
                 <div class="min-w-[280px] h-[400px] relative rounded-3xl overflow-hidden snap-start group cursor-pointer shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb39279c23?q=80&w=600" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <img src="https://i.ibb.co.com/MwzptCK/Rectangle-121.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6">
                         <h3 class="text-2xl font-bold">Lukisan</h3>
@@ -128,7 +128,7 @@
 
                 <!-- Card 3: Wayang -->
                 <div class="min-w-[280px] h-[400px] relative rounded-3xl overflow-hidden snap-start group cursor-pointer shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1627894483216-2138afdb33e2?q=80&w=600" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 sepia-[.5]">
+                    <img src="https://i.ibb.co.com/bjYBY8ct/Rectangle-118.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 sepia-[.5]">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6">
                         <h3 class="text-2xl font-bold">Wayang Suket</h3>
@@ -138,7 +138,7 @@
 
                  <!-- Card 4: Keroncong -->
                  <div class="min-w-[280px] h-[400px] relative rounded-3xl overflow-hidden snap-start group cursor-pointer shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=600" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 grayscale">
+                    <img src="https://i.ibb.co.com/NgPs9jVv/Rectangle-119.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110 grayscale">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6">
                         <h3 class="text-2xl font-bold">Keroncong</h3>
@@ -148,7 +148,7 @@
 
                  <!-- Card 5: Tarot -->
                  <div class="min-w-[280px] h-[400px] relative rounded-3xl overflow-hidden snap-start group cursor-pointer shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1621213346580-f5653551d418?q=80&w=600" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                    <img src="https://i.ibb.co.com/KxjktXmS/Rectangle-120.png" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-6 left-6">
                         <h3 class="text-2xl font-bold">Tarot</h3>
@@ -161,8 +161,14 @@
             <div class="flex justify-between items-center mt-6 px-2">
                 <button class="px-6 py-2 border border-white/40 rounded-full text-sm hover:bg-white hover:text-black transition">Lainnya</button>
                 <div class="flex gap-3">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-white hover:text-black transition"><ion-icon name="arrow-back"></ion-icon></button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-white hover:text-black transition"><ion-icon name="arrow-forward"></ion-icon></button>
+                    <!-- ADDED: id="prevBtn" -->
+                    <button id="prevBtn" class="w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-white hover:text-black transition cursor-pointer z-20">
+                        <ion-icon name="arrow-back"></ion-icon>
+                    </button>
+                    <!-- ADDED: id="nextBtn" -->
+                    <button id="nextBtn" class="w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-white hover:text-black transition cursor-pointer z-20">
+                        <ion-icon name="arrow-forward"></ion-icon>
+                    </button>
                 </div>
             </div>
         </div>
@@ -179,9 +185,11 @@
                 <h2 class="text-4xl font-bold text-white mb-2 relative z-10">Games</h2>
                 <p class="text-gray-300 mb-8 relative z-10">Jawab Pertanyaan dengan benar!</p>
                 
-                <button class="bg-kb-gold text-kb-dark w-fit px-10 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition duration-300 relative z-10">
+                <a href="/games" class="hover:text-[#A85D36]">
+                <button class="bg-white text-kb-dark w-fit px-10 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition duration-300 relative z-10">
                     Mulai
                 </button>
+                </a>
             </div>
 
             <!-- Ulasan Card -->
@@ -192,10 +200,10 @@
                 <p class="text-gray-300 mb-8 relative z-10">Tuangkan Saran Dan kritikan!</p>
                 
                 <div class="flex gap-4 relative z-10">
-                    <button class="bg-kb-gold text-kb-dark px-10 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition duration-300">
+                    <button class="bg-white text-kb-dark px-10 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition duration-300">
                         Tambah
                     </button>
-                    <button class="bg-kb-gold text-kb-dark px-10 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition duration-300">
+                    <button class="bg-white text-kb-dark px-10 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition duration-300">
                         Lihat
                     </button>
                 </div>
@@ -203,44 +211,34 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-batik-pattern text-white pt-16 pb-8 rounded-t-[3rem] -mb-10 mx-auto w-full relative">
-        <!-- Hiasan Overlay -->
-        <div class="absolute inset-0 bg-black/10"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-end pb-8">
-            
-            <!-- Left Info -->
-            <div class="mb-8 md:mb-0">
-                <h3 class="text-2xl font-bold underline decoration-2 underline-offset-8 mb-6">Kampung Budaya Ketawang Gede</h3>
-                
-                <address class="not-italic text-sm text-gray-300 mb-4 leading-relaxed">
-                    Jalan Kerto Pamuji, Kelurahan Ketawanggede,<br>
-                    Kecamatan Lowokwaru Kota Malang.
-                </address>
-                
-                <div class="flex items-center gap-2 text-green-400 hover:text-green-300 cursor-pointer">
-                    <ion-icon name="logo-whatsapp" class="text-xl"></ion-icon>
-                    <span class="font-bold tracking-wide">+62 85727112139</span>
-                </div>
-            </div>
 
-            <!-- Right Socials -->
-            <div class="flex flex-col gap-3">
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-8 flex justify-center"><ion-icon name="logo-instagram" class="text-2xl group-hover:scale-110 transition"></ion-icon></div>
-                    <span class="font-bold text-sm">kampungbudoyo45</span>
-                </a>
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-8 flex justify-center"><ion-icon name="logo-tiktok" class="text-2xl group-hover:scale-110 transition"></ion-icon></div>
-                    <span class="font-bold text-sm">kampungbudoyo</span>
-                </a>
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-8 flex justify-center"><ion-icon name="logo-youtube" class="text-2xl text-red-500 group-hover:scale-110 transition"></ion-icon></div>
-                    <span class="font-bold text-sm">kampungbudoyo45</span>
-                </a>
-            </div>
-        </div>
-    </footer>
+
+    <!-- SCRIPT FUNCTIONALITY (NEW) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('galleryContainer');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Jarak scroll: Lebar Kartu (280px) + Gap (24px) = 304px. Dibulatkan 320px agar aman.
+            const scrollAmount = 320; 
+
+            if (container && prevBtn && nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    container.scrollBy({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    container.scrollBy({
+                        left: -scrollAmount,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 
 </x-layout>
