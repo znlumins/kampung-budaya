@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('foto')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->timestamp('created_at')->nullable();
         });
 
+        // <-- INI BAGIAN PENTING YANG MEMBUAT TABEL SESSIONS -->
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();
@@ -44,6 +46,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('sessions'); // <-- Jangan lupa tambahkan ini juga
     }
 };

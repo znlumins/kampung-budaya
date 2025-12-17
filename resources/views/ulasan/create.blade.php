@@ -1,3 +1,4 @@
+{{-- PERBAIKAN UTAMA: Tambahkan tag pembuka layout --}}
 <x-layout :hideFooter="true">
 
     <!-- Container Utama -->
@@ -9,46 +10,45 @@
             <!-- BAGIAN KIRI: FORM INPUT -->
             <div class="w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-center">
                 
-                <form action="#" method="POST" class="space-y-5">
-                    @csrf
+                <form action="{{ route('ulasan.store') }}" method="POST" class="space-y-5">
+                    @csrf <!-- Token Wajib -->
                     
-                    <!-- Nama -->
+                    <!-- Nama (Otomatis) -->
                     <div class="space-y-1">
                         <label class="block text-sm font-medium text-black ml-1">Nama</label>
-                        <input type="text" value="{{ auth()->user()->name ?? '' }}" readonly
+                        <input type="text" value="{{ auth()->user()->name ?? 'Pengunjung' }}" readonly
                             class="w-full h-12 px-4 bg-[#756A60] text-white rounded-md border-none focus:ring-0 cursor-not-allowed opacity-80">
                     </div>
 
                     <!-- Status -->
                     <div class="space-y-1">
                         <label class="block text-sm font-medium text-black ml-1">Status</label>
-                        <input type="text" placeholder="Contoh: Mahasiswa / Warga" 
+                        <input type="text" name="status" placeholder="Contoh: Mahasiswa / Warga" required
                             class="w-full h-12 px-4 bg-[#756A60] text-white placeholder-gray-300 rounded-md border-none focus:ring-2 focus:ring-[#5C534B] focus:outline-none">
                     </div>
 
                     <!-- Rating Bintang -->
                     <div class="space-y-1">
                         <label class="block text-sm font-medium text-black ml-1">Rating</label>
-                        <div class="w-full h-12 px-4 bg-[#756A60] rounded-md flex items-center gap-2">
-                            <!-- Bintang Interaktif Sederhana -->
-                            <button type="button" class="text-yellow-400 text-2xl hover:scale-110 transition"><ion-icon name="star"></ion-icon></button>
-                            <button type="button" class="text-yellow-400 text-2xl hover:scale-110 transition"><ion-icon name="star"></ion-icon></button>
-                            <button type="button" class="text-yellow-400 text-2xl hover:scale-110 transition"><ion-icon name="star"></ion-icon></button>
-                            <button type="button" class="text-yellow-400 text-2xl hover:scale-110 transition"><ion-icon name="star"></ion-icon></button>
-                            <button type="button" class="text-gray-400 text-2xl hover:text-yellow-400 hover:scale-110 transition"><ion-icon name="star"></ion-icon></button>
-                        </div>
+                        <select name="rating" class="w-full h-12 px-4 bg-[#756A60] text-white rounded-md border-none focus:ring-2 focus:ring-[#5C534B] cursor-pointer">
+                            <option value="5">⭐⭐⭐⭐⭐ (Sangat Bagus)</option>
+                            <option value="4">⭐⭐⭐⭐ (Bagus)</option>
+                            <option value="3">⭐⭐⭐ (Cukup)</option>
+                            <option value="2">⭐⭐ (Kurang)</option>
+                            <option value="1">⭐ (Buruk)</option>
+                        </select>
                     </div>
 
                     <!-- Deskripsi -->
                     <div class="space-y-1">
                         <label class="block text-sm font-medium text-black ml-1">Deskripsi</label>
-                        <textarea rows="4" placeholder="Tulis ulasan anda disini..."
+                        <textarea name="deskripsi" rows="4" placeholder="Tulis ulasan anda disini..." required
                             class="w-full p-4 bg-[#756A60] text-white placeholder-gray-300 rounded-md border-none focus:ring-2 focus:ring-[#5C534B] focus:outline-none resize-none"></textarea>
                     </div>
 
                     <!-- Tombol Action -->
                     <div class="pt-4 flex gap-4">
-                        <a href="/ulasan" class="w-1/2 py-3 bg-[#756A60] text-white rounded-full font-bold hover:bg-[#5e544d] transition duration-300 text-center shadow-md">
+                        <a href="{{ route('ulasan.index') }}" class="w-1/2 py-3 bg-[#756A60] text-white rounded-full font-bold hover:bg-[#5e544d] transition duration-300 text-center shadow-md">
                             Batal
                         </a>
                         <button type="submit" class="w-1/2 py-3 bg-[#756A60] text-white rounded-full font-bold hover:bg-[#5e544d] transition duration-300 shadow-md">
@@ -75,4 +75,5 @@
         </div>
     </div>
 
+{{-- PERBAIKAN UTAMA: Tambahkan tag penutup layout --}}
 </x-layout>

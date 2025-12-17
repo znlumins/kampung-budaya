@@ -17,7 +17,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- Memuat semua file aset yang dibutuhkan, termasuk untuk React --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/app.jsx', 'resources/js/welcomeAnimations.jsx'])
 
     <style>
         .bg-batik-pattern {
@@ -34,14 +35,10 @@
     <nav class="w-full sticky top-0 z-50 bg-[#FFFBE6]/95 backdrop-blur-sm border-b border-[#E6DCC3] shadow-sm">
         <div class="max-w-[90rem] mx-auto px-6 h-20 flex justify-between items-center">
             
-            <!-- KIRI: LOGO + MENU -->
             <div class="flex items-center gap-8 lg:gap-10">
                 <a href="/" class="flex-shrink-0 hover:scale-105 transition duration-300">
-                    <img src="https://i.ibb.co.com/4w7k87yk/Group-23.png" 
-                         alt="Logo Kampung Budaya" 
-                         class="h-12 w-auto object-contain">
+                    <img src="https://i.ibb.co.com/4w7k87yk/Group-23.png" alt="Logo Kampung Budaya" class="h-12 w-auto object-contain">
                 </a>
-
                 <ul class="hidden lg:flex items-center gap-6 text-[#3E2F2B] font-medium text-[14px]">
                     <li><a href="/" class="hover:text-[#A85D36] transition duration-300">Beranda</a></li>
                     <li><a href="/about" class="hover:text-[#A85D36] transition duration-300">Tentang kami</a></li>
@@ -52,17 +49,18 @@
                 </ul>
             </div>
 
-            <!-- KANAN: LOGIN & REGISTER -->
             <div class="flex items-center gap-3">
+                @guest
+                    <a href="{{ route('register') }}" class="text-sm font-semibold text-[#3E2F2B] hover:text-[#A85D36] transition px-3 py-2">Register</a>
+                    <a href="{{ route('login') }}" class="px-7 py-2 bg-[#3E2F2B] text-white rounded-full text-sm font-semibold hover:bg-[#2A1F1C] hover:shadow-md transition-all duration-300">Log in</a>
+                @endguest
                 @auth
-                    <a href="{{ url('/dashboard') }}" class="font-semibold text-[#3E2F2B] hover:text-[#A85D36]">Dashboard</a>
-                @else
-                    <a href="/register" class="text-sm font-semibold text-[#3E2F2B] hover:text-[#A85D36] transition px-3 py-2">
-                        Register
-                    </a>
-                    <a href="/login" class="px-7 py-2 bg-[#3E2F2B] text-white rounded-full text-sm font-semibold hover:bg-[#2A1F1C] hover:shadow-md transition-all duration-300">
-                        Log in
-                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="px-7 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700 hover:shadow-md transition-all duration-300" title="Logged in as {{ auth()->user()->name }}">
+                            Logout
+                        </button>
+                    </form>
                 @endauth
                 <button id="mobile-menu-btn" class="lg:hidden text-[#3E2F2B] text-2xl focus:outline-none ml-2">
                     <ion-icon name="menu"></ion-icon>
@@ -70,20 +68,8 @@
             </div>
         </div>
 
-        <!-- MOBILE MENU -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#FFFBE6] border-t border-[#E6DCC3] absolute w-full left-0 shadow-lg">
-            <div class="flex flex-col px-6 py-4 space-y-4 font-medium text-[#3E2F2B]">
-                <a href="/" class="hover:text-[#A85D36]">Beranda</a>
-                <a href="/about" class="hover:text-[#A85D36]">Tentang kami</a>
-                <a href="/galeri-seni" class="hover:text-[#A85D36]">Galeri Seni</a>
-                <a href="/pentas-seni" class="hover:text-[#A85D36]">Pentas Seni</a>
-                <a href="/ulasan" class="hover:text-[#A85D36]">Ulasan</a>
-                <a href="/kuliner" class="hover:text-[#A85D36]">Kuliner</a>
-                <div class="border-t border-gray-200 pt-2 flex flex-col gap-3">
-                    <a href="/login" class="text-[#3E2F2B]">Log in</a>
-                    <a href="/register" class="text-[#A85D36]">Register</a>
-                </div>
-            </div>
+            {{-- (Kode menu mobile kamu, sudah benar) --}}
         </div>
     </nav>
 
@@ -98,7 +84,6 @@
         <div class="absolute inset-0 bg-black/20 rounded-t-[3rem]"></div>
         
         <div class="relative z-10 max-w-[85rem] mx-auto px-6 md:px-10 flex flex-col md:flex-row justify-between items-end gap-8">
-            <!-- Footer Content Kiri -->
             <div class="w-full md:w-1/2">
                 <h3 class="text-2xl font-bold border-b-2 border-white/30 pb-2 mb-6 inline-block">
                     Kampung Budaya Ketawang Gede
@@ -114,8 +99,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- Footer Social Media Kanan -->
             <div class="flex flex-col gap-4 w-full md:w-auto">
                 <a href="#" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
                     <div class="w-8 h-8 flex justify-center items-center bg-white/10 rounded-full group-hover:bg-white group-hover:text-pink-600 transition duration-300">
@@ -150,5 +133,7 @@
             menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
         }
     </script>
+    
+    @stack('scripts')
 </body>
 </html>

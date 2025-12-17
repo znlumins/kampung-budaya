@@ -1,91 +1,64 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth; // Jangan lupa import ini di paling atas
-use App\Models\User;
+// Panggil semua controller yang kita butuhkan di atas
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UlasanController; // <-- PENTING: Tambahkan ini
 
-Route::get('/', function () {
-    return view('welcome');
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
+
+// --- RUTE HALAMAN PUBLIK (Bisa diakses siapa saja) ---
+Route::get('/', function () { return view('welcome'); })->name('home'); // <-- Diberi nama 'home'
+Route::get('/about', function () { return view('about'); })->name('about');
+Route::get('/pentas-seni', function () { return view('pentas'); })->name('pentas');
+Route::get('/galeri-detail', function () { return view('galeri-detail'); })->name('galeri.detail');
+Route::get('/galeri-seni', function () { return view('galeri'); })->name('galeri');
+Route::get('/kuliner', function () { return view('kuliner'); })->name('kuliner');
+
+
+// --- GRUP ROUTE UNTUK TAMU (YANG BELUM LOGIN) ---
+Route::middleware('guest')->group(function () {
+    // Menampilkan halaman register
+    Route::get('/register', [RegisterController::class, 'create'])->name('register');
+    // Memproses data dari form register
+    Route::post('/register', [RegisterController::class, 'store']);
+
+    // Menampilkan halaman login
+    Route::get('/login', [LoginController::class, 'create'])->name('login');
+    // Memproses data dari form login
+    Route::post('/login', [LoginController::class, 'store']);
 });
 
-// Route untuk menampilkan halaman Login
-Route::get('/login', function () {
-    return view('auth.login'); // Sesuaikan dengan nama folder/file kamu
-})->name('login');
 
-// Route untuk menampilkan halaman Register
-Route::get('/register', function () {
-    return view('auth.register'); // Sesuaikan dengan nama folder/file kamu
-})->name('register');
+// --- GRUP ROUTE UNTUK PENGGUNA YANG SUDAH LOGIN ---
+Route::middleware('auth')->group(function () {
+    // Halaman dashboard setelah login/register
+    Route::get('/welcome', function () {
+        return view('welcome');
+    })->name('welcome');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/pentas-seni', function () {
-    return view('pentas');
-})->name('pentas');
-
-Route::get('/galeri-detail', function () {
-    return view('galeri-detail');
-})->name('galeri.detail');
-
-Route::get('/galeri-seni', function () {
-    return view('galeri');
-})->name('galeri');
-
-Route::get('/kuliner', function () {
-    return view('kuliner');
-})->name('kuliner');
-
-// 1. ROUTE GAME (Diproteksi middleware 'auth')
-// Artinya: Hanya user yang sudah login yang bisa masuk sini.
-Route::get('/games', function () {
-    return view('game');
-})->middleware('auth')->name('games');
-
-
-// 2. ROUTE UNTUK "PURA-PURA LOGIN" (Hanya untuk testing develop)
-// Buka link '/test-login' di browser, maka kamu akan otomatis dianggap sudah login.
-Route::get('/test-login', function () {
-    // Kita buat user palsu sementara di session
-    $user = new \App\Models\User();
-    $user->id = 1;
-    $user->name = 'Pengunjung Budaya';
-    $user->email = 'tamu@budaya.com';
+    // Route untuk Logout (AMAN KARENA PAKAI POST)
+    Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
     
-    Auth::login($user);
-    
-    return redirect('/games'); // Langsung lempar ke halaman game
-});
+    // Rute game kamu
+    Route::get('/games', function () { return view('game'); })->name('games');
 
-// 3. ROUTE UNTUK LOGOUT (Agar bisa tes tampilan kalau belum login)
-Route::get('/logout', function () {
-    Auth::logout();
-    return redirect('/');
-});
 
-Route::get('/test-login', function () {
-    // Cari user yang barusan kita buat
-    $user = User::where('email', 'test@test.com')->first();
-    
-    // Login-kan dia
-    Auth::login($user);
-    
-    return redirect('/games');
-});
+    // =======================================================
+    // ==== PERBAIKAN UTAMA: SEMUA ROUTE ULASAN DI SINI ====
+    // =======================================================
 
-// Group Route yang butuh Login
-Route::middleware(['auth'])->group(function () {
+    // 1. Menampilkan daftar ulasan (mengarah ke UlasanController@index)
+    Route::get('/ulasan', [UlasanController::class, 'index'])->name('ulasan.index');
 
-    // 1. Halaman Daftar Ulasan
-    Route::get('/ulasan', function () {
-        return view('ulasan.index');
-    })->name('ulasan.index');
+    // 2. Menampilkan form tambah ulasan (mengarah ke UlasanController@create)
+    Route::get('/ulasan/tambah', [UlasanController::class, 'create'])->name('ulasan.create');
 
-    // 2. Halaman Form Tambah Ulasan
-    Route::get('/ulasan/tambah', function () {
-        return view('ulasan.create');
-    })->name('ulasan.create');
-
+    // 3. Menyimpan ulasan baru dari form (mengarah ke UlasanController@store)
+    Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
 });
