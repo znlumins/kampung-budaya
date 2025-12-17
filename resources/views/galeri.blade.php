@@ -71,7 +71,7 @@
                 <!-- Card 4: Aksara FIB (Painting/Vertical) -->
                 <div class="group">
                     <div class="rounded-[2.5rem] overflow-hidden shadow-xl mb-4 h-[400px]">
-                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb39279c23?q=80&w=600" 
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-xl font-bold text-[#3E2F2B] mb-2">Aksara FIB</h3>
@@ -84,7 +84,7 @@
                 <!-- Card 5: Aksara FIB (Mural/Horizontal) -->
                 <div class="group">
                     <div class="rounded-[2.5rem] overflow-hidden shadow-xl mb-4 h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?q=80&w=600" 
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-xl font-bold text-[#3E2F2B] mb-2">Aksara FIB</h3>
@@ -103,7 +103,7 @@
                 <!-- Card 6: Tari Topeng (Horizontal) -->
                 <div class="group">
                     <div class="rounded-[2.5rem] overflow-hidden shadow-xl mb-4 h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600" 
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-xl font-bold text-[#3E2F2B] mb-2">Tari Topeng</h3>
@@ -116,7 +116,7 @@
                 <!-- Card 7: Keroncong (Singer/Vertical) -->
                 <div class="group">
                     <div class="rounded-[2.5rem] overflow-hidden shadow-xl mb-4 h-[400px]">
-                        <img src="https://images.unsplash.com/photo-1525926477800-7a3be5800fcb?q=80&w=600" 
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-xl font-bold text-[#3E2F2B] mb-2">Keroncong</h3>
@@ -129,7 +129,7 @@
                 <!-- Card 8: Aksara FIB (Gamelan/Horizontal) -->
                 <div class="group">
                     <div class="rounded-[2.5rem] overflow-hidden shadow-xl mb-4 h-[250px]">
-                        <img src="https://images.unsplash.com/photo-1621884883497-2a49800b6399?q=80&w=600" 
+                        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                     </div>
                     <h3 class="text-xl font-bold text-[#3E2F2B] mb-2">Aksara FIB</h3>

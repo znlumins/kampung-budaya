@@ -1,10 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// Panggil semua controller yang kita butuhkan di atas
+
+// --- CONTROLLER HALAMAN PUBLIK ---
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\UlasanController; // <-- PENTING: Tambahkan ini
+use App\Http\Controllers\UlasanController;
+use App\Http\Controllers\GameController; // <--- INI PENTING (Controller Public)
+
+// --- CONTROLLER ADMIN ---
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
+// Kita beri alias agar tidak bentrok dengan GameController Public
+use App\Http\Controllers\Admin\GameController as AdminGameController;
+use App\Http\Controllers\Admin\UlasanController as AdminUlasanController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,8 +22,8 @@ use App\Http\Controllers\UlasanController; // <-- PENTING: Tambahkan ini
 |--------------------------------------------------------------------------
 */
 
-// --- RUTE HALAMAN PUBLIK (Bisa diakses siapa saja) ---
-Route::get('/', function () { return view('welcome'); })->name('home'); // <-- Diberi nama 'home'
+// --- RUTE HALAMAN PUBLIK ---
+Route::get('/', function () { return view('welcome'); })->name('home');
 Route::get('/about', function () { return view('about'); })->name('about');
 Route::get('/pentas-seni', function () { return view('pentas'); })->name('pentas');
 Route::get('/galeri-detail', function () { return view('galeri-detail'); })->name('galeri.detail');
@@ -21,44 +31,43 @@ Route::get('/galeri-seni', function () { return view('galeri'); })->name('galeri
 Route::get('/kuliner', function () { return view('kuliner'); })->name('kuliner');
 
 
-// --- GRUP ROUTE UNTUK TAMU (YANG BELUM LOGIN) ---
+// --- RUTE TAMU (BELUM LOGIN) ---
 Route::middleware('guest')->group(function () {
-    // Menampilkan halaman register
     Route::get('/register', [RegisterController::class, 'create'])->name('register');
-    // Memproses data dari form register
     Route::post('/register', [RegisterController::class, 'store']);
-
-    // Menampilkan halaman login
     Route::get('/login', [LoginController::class, 'create'])->name('login');
-    // Memproses data dari form login
     Route::post('/login', [LoginController::class, 'store']);
 });
 
 
-// --- GRUP ROUTE UNTUK PENGGUNA YANG SUDAH LOGIN ---
+// --- RUTE USER LOGIN ---
 Route::middleware('auth')->group(function () {
-    // Halaman dashboard setelah login/register
-    Route::get('/welcome', function () {
-        return view('welcome');
-    })->name('welcome');
-
-    // Route untuk Logout (AMAN KARENA PAKAI POST)
+    Route::get('/welcome', function () { return view('welcome'); })->name('welcome');
     Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
     
-    // Rute game kamu
-    Route::get('/games', function () { return view('game'); })->name('games');
+    // ============================================================
+    // PERBAIKAN DI SINI:
+    // Gunakan [GameController::class, 'index'] BUKAN function() {...}
+    // ============================================================
+    Route::get('/games', [GameController::class, 'index'])->name('games');
 
-
-    // =======================================================
-    // ==== PERBAIKAN UTAMA: SEMUA ROUTE ULASAN DI SINI ====
-    // =======================================================
-
-    // 1. Menampilkan daftar ulasan (mengarah ke UlasanController@index)
+    // Rute Ulasan
     Route::get('/ulasan', [UlasanController::class, 'index'])->name('ulasan.index');
-
-    // 2. Menampilkan form tambah ulasan (mengarah ke UlasanController@create)
     Route::get('/ulasan/tambah', [UlasanController::class, 'create'])->name('ulasan.create');
-
-    // 3. Menyimpan ulasan baru dari form (mengarah ke UlasanController@store)
     Route::post('/ulasan', [UlasanController::class, 'store'])->name('ulasan.store');
+});
+
+
+// --- RUTE ADMIN PANEL ---
+Route::prefix('admin')
+    ->middleware(['auth', 'admin'])
+    ->name('admin.')
+    ->group(function () {
+        
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // CRUD Admin
+    Route::resource('users', UserController::class);
+    Route::resource('games', AdminGameController::class); // Pakai Alias Admin
+    Route::resource('ulasan', AdminUlasanController::class); // Pakai Alias Admin
 });

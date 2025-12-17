@@ -38,12 +38,12 @@
                 <div class="flex gap-4 mb-6 w-full justify-center lg:justify-end">
                     <!-- Gambar 1 -->
                     <div class="w-1/2 aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl border border-white/50">
-                        <img src="https://images.unsplash.com/photo-1628062148006-0370f614072f?q=80&w=600" 
+                        <img src="https://i.ibb.co.com/fVdqbTRp/Rectangle-19-1.png?q=80&w=600" 
                              class="w-full h-full object-cover hover:scale-110 transition duration-500">
                     </div>
                     <!-- Gambar 2 -->
                     <div class="w-1/2 aspect-[3/4] rounded-[2rem] overflow-hidden shadow-xl border border-white/50">
-                        <img src="https://images.unsplash.com/photo-1628108480391-727932d0c242?q=80&w=600" 
+                        <img src="https://i.ibb.co.com/6075kGTx/Rectangle-145.png?q=80&w=600" 
                              class="w-full h-full object-cover hover:scale-110 transition duration-500 sepia-[.3]">
                     </div>
                 </div>

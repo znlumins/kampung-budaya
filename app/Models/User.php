@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+// 1. PENTING: Import Enum Role agar dikenali
+use App\Enums\Role;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -20,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'foto', // <-- PASTIKAN INI DITAMBAHKAN
+        'foto', 
+        'role', // 2. Tambahkan ini agar kolom role bisa diisi
     ];
 
     /**
@@ -43,6 +45,14 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            // 3. INI KUNCINYA: Mengubah teks database menjadi Enum otomatis
+            'role' => Role::class, 
         ];
+    }
+    
+    // Tambahan: Relasi ke Ulasan (Opsional tapi bagus untuk Admin Panel nanti)
+    public function ulasans()
+    {
+        return $this->hasMany(Ulasan::class);
     }
 }

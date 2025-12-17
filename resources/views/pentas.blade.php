@@ -7,7 +7,7 @@
         <div class="relative w-full h-[350px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-xl mb-12 group">
             
             <!-- Gambar Utama (Wayang Suket) -->
-            <img src="https://images.unsplash.com/photo-1628062148006-0370f614072f?q=80&w=1200" 
+            <img src="https://i.ibb.co.com/xSsygGNX/Rectangle-19.png?q=80&w=1200" 
                  alt="Kesenian Wayang Suket" 
                  class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-700">
 
@@ -36,7 +36,7 @@
             
             <a href="/galeri-detail" class="group cursor-pointer block">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1628062148006-0370f614072f?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Wayang Suket Mbah Jo</h3>
             </a>
@@ -52,7 +52,7 @@
             <!-- Card 3: Geng-Gong (Gamelan) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1621884883497-2a49800b6399?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Geng-Gong</h3>
             </div>
@@ -68,7 +68,7 @@
             <!-- Card 5: Aksara FIB (Wayang Suket Detail) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1628062148006-0370f614072f?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Aksara FIB</h3>
             </div>
@@ -76,7 +76,7 @@
             <!-- Card 6: Aksara FIB (Tarot/Kartu) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1621213346580-f5653551d418?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 sepia">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 sepia">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Aksara FIB</h3>
             </div>

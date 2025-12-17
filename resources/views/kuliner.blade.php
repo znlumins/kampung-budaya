@@ -7,7 +7,7 @@
         <div class="relative w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl mb-16 group">
             
             <!-- Gambar Jajan Pasar -->
-            <img src="https://images.unsplash.com/photo-1604503708816-f3310037f407?q=80&w=1200" 
+            <img src="https://i.ibb.co.com/rRDj56G5/image-72.png?q=80&w=1200" 
                  alt="Aneka Jajan Pasar Tradisional" 
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
 
@@ -79,7 +79,7 @@
             <!-- Card 1: Nagasari -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1628108480391-727932d0c242?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/4wzS4Qnc/image-16.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Nagasari</h3>
@@ -92,7 +92,7 @@
             <!-- Card 2: Lupis -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1598561705663-875c742c3858?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/JjQXmbxP/image-2.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Lupis</h3>
@@ -105,7 +105,7 @@
             <!-- Card 3: Klepon -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1626081577783-c5b1b4432135?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/93dw7M7L/image-17.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Klepon</h3>
@@ -118,7 +118,7 @@
             <!-- Card 4: Getuk -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1616428782977-965a39626300?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/QwbK5Kq/image-9.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Getuk</h3>
@@ -131,7 +131,7 @@
             <!-- Card 5: Dadar Gulung -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1617431525624-912b7a974b7c?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/DP5FftKv/image-18.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Dadar Gulung</h3>
@@ -144,7 +144,7 @@
             <!-- Card 6: Serabi -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1601620986641-5a4135e5898d?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/GvQWD08T/image-10.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Serabi</h3>
@@ -157,7 +157,7 @@
             <!-- Card 7: Onde-Onde -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1596450535300-8809088654c6?q=80&w=400" class="w-full h-full object-cover">
+                    <img src="https://i.ibb.co.com/Jj7hZ577/image-19.png?q=80&w=400" class="w-full h-full object-cover">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Onde-Onde</h3>
@@ -170,7 +170,7 @@
             <!-- Card 8: Ongol-Ongol -->
             <div class="bg-[#463C38] text-white rounded-[2.5rem] p-6 flex flex-col sm:flex-row gap-6 items-center shadow-xl hover:shadow-2xl transition duration-300">
                 <div class="w-full sm:w-48 h-48 shrink-0 rounded-3xl overflow-hidden border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1628108480391-727932d0c242?q=80&w=400" class="w-full h-full object-cover grayscale-[0.2]">
+                    <img src="https://i.ibb.co.com/Jjt82RNk/image-11.png?q=80&w=400" class="w-full h-full object-cover grayscale-[0.2]">
                 </div>
                 <div>
                     <h3 class="text-2xl font-bold border-b border-white/50 inline-block mb-3 pb-1">Ongol-Ongol</h3>

@@ -2,53 +2,39 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ulasan;
 use Illuminate\Http\Request;
+use App\Models\Ulasan;
 use Illuminate\Support\Facades\Auth;
 
 class UlasanController extends Controller
 {
-    /**
-     * Menampilkan daftar semua ulasan.
-     */
+    // 1. Tampilkan semua ulasan orang-orang
     public function index()
     {
-        // Ambil semua data ulasan dari database, urutkan dari yang paling baru
-        $ulasans = Ulasan::latest()->get();
-
-        // Kirim data ulasan ke view 'ulasan.index'
-        return view('ulasan.index', [
-            'ulasans' => $ulasans
-        ]);
+        $ulasans = Ulasan::with('user')->latest()->paginate(9);
+        return view('ulasan.index', compact('ulasans'));
     }
 
-    /**
-     * Menampilkan form untuk membuat ulasan baru.
-     */
+    // 2. Tampilkan Form Tambah Ulasan
     public function create()
     {
         return view('ulasan.create');
     }
 
-    /**
-     * Menyimpan ulasan baru ke database.
-     */
+    // 3. Simpan Ulasan ke Database
     public function store(Request $request)
     {
-        // 1. Validasi input dari form
-        $validatedData = $request->validate([
-            'status' => 'required|string|max:255',
+        $request->validate([
+            'content' => 'required|string|min:5|max:500',
             'rating' => 'required|integer|min:1|max:5',
-            'deskripsi' => 'required|string',
         ]);
 
-        // 2. Tambahkan nama pengguna yang sedang login ke data
-        $validatedData['nama'] = Auth::user()->name;
+        Ulasan::create([
+            'user_id' => Auth::id(), // Otomatis ambil ID user yang sedang login
+            'content' => $request->content,
+            'rating' => $request->rating,
+        ]);
 
-        // 3. Simpan data yang sudah divalidasi ke database
-        Ulasan::create($validatedData);
-
-        // 4. Arahkan kembali ke halaman daftar ulasan dengan pesan sukses
-        return redirect()->route('ulasan.index')->with('success', 'Ulasan berhasil ditambahkan!');
+        return redirect()->route('ulasan.index')->with('success', 'Terima kasih! Ulasan Anda berhasil dikirim.');
     }
 }

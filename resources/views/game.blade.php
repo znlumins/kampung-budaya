@@ -3,58 +3,77 @@
     <!-- Container Utama -->
     <div class="min-h-[85vh] flex items-center justify-center py-10 px-4">
         
-        <!-- Card Wrapper (Split Layout) -->
+        <!-- Card Wrapper -->
         <div class="flex flex-col md:flex-row w-full max-w-6xl bg-[#F5E6CA] rounded-[2.5rem] shadow-2xl overflow-hidden min-h-[600px]">
             
             <!-- BAGIAN KIRI: AREA GAME INTERAKTIF -->
             <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center items-center text-center relative">
                 
-                <!-- SCENE 1: PERTANYAAN (Default Visible) -->
+                <!-- INDIKATOR PROGRESS (Soal 1/3) -->
+                <div id="progress-indicator" class="absolute top-6 right-8 text-[#756A60] font-bold text-sm bg-white px-3 py-1 rounded-full shadow-sm hidden">
+                    Soal <span id="current-step">1</span>/<span id="total-step">3</span>
+                </div>
+
+                <!-- SCENE 1: PERTANYAAN -->
                 <div id="quiz-scene" class="w-full transition-opacity duration-300">
-                    <h1 class="text-3xl font-bold text-[#3E2F2B] mb-6">Games</h1>
+                    <h1 class="text-3xl font-bold text-[#3E2F2B] mb-6">Games Kuis</h1>
                     
-                    <!-- Gambar Soal -->
-                    <div class="w-full h-56 rounded-2xl overflow-hidden shadow-lg mb-6 bg-gray-200">
-                        <img id="question-image" src="" class="w-full h-full object-cover">
+                    <div class="w-full h-56 rounded-2xl overflow-hidden shadow-lg mb-6 bg-gray-200 group relative">
+                        <img id="question-image" src="" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     </div>
 
-                    <!-- Teks Soal -->
-                    <h2 id="question-text" class="text-xl font-medium text-[#3E2F2B] mb-8">
+                    <h2 id="question-text" class="text-xl font-medium text-[#3E2F2B] mb-8 min-h-[3rem]">
                         Loading...
                     </h2>
 
-                    <!-- Pilihan Jawaban (Grid 2x2) -->
                     <div id="options-container" class="grid grid-cols-2 gap-4 w-full">
-                        <!-- Buttons will be injected here by JS -->
+                        <!-- Buttons injected by JS -->
                     </div>
                 </div>
 
-                <!-- SCENE 2: JAWABAN BENAR (Hidden) -->
+                <!-- SCENE 2: JAWABAN BENAR -->
                 <div id="win-scene" class="hidden w-full flex-col items-center animate-fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4128/4128373.png" class="w-48 h-48 mb-6 drop-shadow-lg">
-                    <h2 class="text-3xl font-bold text-[#3E2F2B] mb-8">Terima Kasih!</h2> <!-- Teks sesuai gambar -->
+                    <img src="https://cdn-icons-png.flaticon.com/512/4128/4128373.png" class="w-40 h-40 mb-6 drop-shadow-lg animate-bounce">
+                    <h2 class="text-3xl font-bold text-green-600 mb-2">Benar!</h2>
+                    <p class="text-[#3E2F2B] mb-8">+100 Poin</p>
                     
-                    <div class="flex gap-4">
-                        <button onclick="nextLevel()" class="px-8 py-3 bg-[#756A60] text-white rounded-full font-semibold hover:bg-[#5e544d] transition shadow-md">
-                            Lagi
-                        </button>
-                        <a href="/" class="px-8 py-3 bg-[#756A60] text-white rounded-full font-semibold hover:bg-[#5e544d] transition shadow-md">
-                            Kembali
-                        </a>
-                    </div>
+                    <button onclick="nextLevel()" class="px-10 py-3 bg-[#756A60] text-white rounded-full font-bold hover:bg-[#5e544d] transition shadow-lg transform hover:-translate-y-1">
+                        Lanjut
+                    </button>
                 </div>
 
-                <!-- SCENE 3: JAWABAN SALAH (Hidden) -->
+                <!-- SCENE 3: JAWABAN SALAH -->
                 <div id="lose-scene" class="hidden w-full flex-col items-center animate-fade-in">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" class="w-48 h-48 mb-6 drop-shadow-lg opacity-80">
-                    <h2 class="text-3xl font-bold text-[#3E2F2B] mb-8">Maaf, Anda Salah!</h2>
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" class="w-40 h-40 mb-6 drop-shadow-lg opacity-80">
+                    <h2 class="text-3xl font-bold text-red-500 mb-2">Salah!</h2>
+                    <p class="text-[#3E2F2B] mb-2">Jawaban yang benar adalah:</p>
+                    <p id="correct-answer-text" class="font-bold text-lg text-kb-orange mb-8">...</p>
+                    
+                    <button onclick="nextLevel()" class="px-10 py-3 bg-[#756A60] text-white rounded-full font-bold hover:bg-[#5e544d] transition shadow-lg transform hover:-translate-y-1">
+                        Lanjut
+                    </button>
+                </div>
+
+                <!-- SCENE 4: HASIL SKOR AKHIR (REKAP) -->
+                <div id="finish-scene" class="hidden w-full flex-col items-center animate-fade-in">
+                    <img id="score-image" src="" class="w-40 h-40 mb-4 drop-shadow-lg">
+                    
+                    <h2 class="text-2xl font-bold text-[#3E2F2B]">Permainan Selesai!</h2>
+                    
+                    <div class="my-6 text-center">
+                        <p class="text-gray-500 text-sm uppercase tracking-widest mb-1">Skor Kamu</p>
+                        <h1 class="text-6xl font-black text-[#756A60]">
+                            <span id="final-score">0</span><span class="text-2xl text-gray-400 font-medium">/300</span>
+                        </h1>
+                        <p id="score-message" class="text-[#A85D36] font-medium mt-2">Hebat!</p>
+                    </div>
                     
                     <div class="flex gap-4">
-                        <button onclick="restartLevel()" class="px-8 py-3 bg-[#756A60] text-white rounded-full font-semibold hover:bg-[#5e544d] transition shadow-md">
-                            Ulangi
-                        </button>
-                        <a href="/" class="px-8 py-3 bg-[#756A60] text-white rounded-full font-semibold hover:bg-[#5e544d] transition shadow-md">
-                            Kembali
+                        <a href="/games" class="px-8 py-3 bg-[#756A60] text-white rounded-full font-semibold hover:bg-[#5e544d] transition shadow-md">
+                            Main Lagi
+                        </a>
+                        <a href="/" class="px-8 py-3 bg-gray-200 text-gray-700 rounded-full font-semibold hover:bg-gray-300 transition shadow-md">
+                            Beranda
                         </a>
                     </div>
                 </div>
@@ -63,14 +82,16 @@
 
             <!-- BAGIAN KANAN: STATIC INFO -->
             <div class="w-full md:w-1/2 bg-[#756A60] p-10 md:p-14 flex flex-col justify-center text-white relative">
-                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-8">
-                    Welcome To Games <br>
-                    Kampung Budaya <br>
-                    Ketawang Gede
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-8 relative z-10">
+                    Seberapa Tahu <br>
+                    Kamu Tentang <br>
+                    Budaya Kita?
                 </h1>
 
-                <p class="text-white/80 text-xl leading-relaxed font-light">
-                    Ayoo pahami sampai mana kemampuan andaa!!!
+                <p class="text-white/80 text-xl leading-relaxed font-light relative z-10">
+                    Jawab 3 pertanyaan acak dan buktikan pengetahuanmu!
                 </p>
             </div>
 
@@ -79,95 +100,133 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // DATA SOAL (Bisa ditambah)
-        const questions = [
-            {
-                image: "https://asset.kompas.com/crops/O_R7Xb8Q-d0u4zF10q5vKqK5wQA=/0x0:1000x667/750x500/data/photo/2020/03/10/5e675b7b9b6d8.jpg", // Tari Saman
-                text: "Dari Mana Tari Saman Berasal?",
-                options: ["Sulawesi", "Sumatra", "Kalimantan", "Aceh"],
-                answer: "Aceh"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Gudeg_Jogja.jpg/1200px-Gudeg_Jogja.jpg", // Gudeg
-                text: "Dari Mana Gudeg Berasal?",
-                options: ["Bandung", "Semarang", "Jogja", "Solo"],
-                answer: "Jogja"
-            },
-            {
-                image: "https://asset.kompas.com/crops/F-w5x_q4X_q4X_q4X_q4X_q4X_q4=/0x0:0x0/750x500/data/photo/2021/09/22/614b0b0b0b0b0.jpg", // Reog (Placeholder Reog)
-                text: "Dari Mana Reog Berasal?",
-                options: ["Probolinggo", "Ponorogo", "Jember", "Malang"],
-                answer: "Ponorogo"
-            }
-        ];
-
+        // Ambil data dari Controller
+        const questions = @json($questions);
+        
+        // Variabel Game
         let currentQuestionIndex = 0;
+        let score = 0; // Total skor
+        let correctCount = 0; // Jumlah jawaban benar
 
-        // Elements
+        // Elements DOM
         const quizScene = document.getElementById('quiz-scene');
         const winScene = document.getElementById('win-scene');
         const loseScene = document.getElementById('lose-scene');
+        const finishScene = document.getElementById('finish-scene');
+        const progressIndicator = document.getElementById('progress-indicator');
+        
         const imgEl = document.getElementById('question-image');
         const textEl = document.getElementById('question-text');
         const optionsContainer = document.getElementById('options-container');
+        const correctAnswerText = document.getElementById('correct-answer-text');
 
-        // Initialize First Question
+        // Elements Skor Akhir
+        const finalScoreEl = document.getElementById('final-score');
+        const scoreMessageEl = document.getElementById('score-message');
+        const scoreImageEl = document.getElementById('score-image');
+
         function loadQuestion() {
+            // Jika soal kosong (Database kosong)
+            if (questions.length === 0) {
+                textEl.innerText = "Belum ada soal tersedia.";
+                optionsContainer.innerHTML = '';
+                imgEl.style.display = 'none';
+                return;
+            }
+
+            // Jika soal sudah habis (Selesai 3 soal)
+            if (currentQuestionIndex >= questions.length) {
+                showFinish();
+                return;
+            }
+
             const currentQ = questions[currentQuestionIndex];
             
-            // Reset Scenes
+            // Update Tampilan
             quizScene.classList.remove('hidden');
             winScene.classList.add('hidden');
             loseScene.classList.add('hidden');
+            finishScene.classList.add('hidden');
+            
+            // Update Indikator Progress
+            progressIndicator.classList.remove('hidden');
+            document.getElementById('current-step').innerText = currentQuestionIndex + 1;
+            document.getElementById('total-step').innerText = questions.length;
 
-            // Set Content
+            // Set Konten Soal
             imgEl.src = currentQ.image;
             textEl.innerText = currentQ.text;
             
-            // Clear old buttons
+            // Reset Tombol
             optionsContainer.innerHTML = '';
 
-            // Create Buttons
-            currentQ.options.forEach(opt => {
+            // Acak urutan jawaban
+            const shuffledOptions = [...currentQ.options].sort(() => Math.random() - 0.5);
+
+            shuffledOptions.forEach(opt => {
                 const btn = document.createElement('button');
                 btn.innerText = opt;
-                btn.className = "py-3 px-2 bg-[#756A60] text-white rounded-full font-medium hover:bg-[#5e544d] hover:scale-105 transition shadow-md w-full";
-                btn.onclick = () => checkAnswer(opt);
+                btn.className = "py-3 px-2 bg-[#756A60] text-white rounded-full font-medium hover:bg-[#5e544d] hover:scale-105 transition shadow-md w-full text-sm md:text-base";
+                btn.onclick = () => checkAnswer(opt, currentQ.answer);
                 optionsContainer.appendChild(btn);
             });
         }
 
-        // Logic Check Answer
-        function checkAnswer(selectedOption) {
-            const correctAnswer = questions[currentQuestionIndex].answer;
-
-            quizScene.classList.add('hidden'); // Sembunyikan soal
+        function checkAnswer(selectedOption, correctAnswer) {
+            quizScene.classList.add('hidden');
+            progressIndicator.classList.add('hidden');
 
             if (selectedOption === correctAnswer) {
-                winScene.classList.remove('hidden'); // Tampilkan 'Terima Kasih'
+                // BENAR
+                score += 100; // Tambah 100 poin
+                correctCount++;
+                winScene.classList.remove('hidden'); 
                 winScene.classList.add('flex');
             } else {
-                loseScene.classList.remove('hidden'); // Tampilkan 'Maaf Salah'
+                // SALAH
+                correctAnswerText.innerText = correctAnswer; // Kasih tau jawaban yg benar
+                loseScene.classList.remove('hidden'); 
                 loseScene.classList.add('flex');
             }
         }
 
-        // Tombol 'Lagi' (Soal Berikutnya)
         function nextLevel() {
             currentQuestionIndex++;
-            if (currentQuestionIndex >= questions.length) {
-                currentQuestionIndex = 0; // Reset ke awal jika habis
+            loadQuestion();
+        }
+
+        function showFinish() {
+            // Sembunyikan semua scene game
+            quizScene.classList.add('hidden');
+            winScene.classList.add('hidden');
+            loseScene.classList.add('hidden');
+            progressIndicator.classList.add('hidden');
+
+            // Tampilkan Scene Finish
+            finishScene.classList.remove('hidden');
+            finishScene.classList.add('flex');
+
+            // Set Data Skor
+            finalScoreEl.innerText = score;
+
+            // Logika Pesan & Gambar berdasarkan skor
+            if (correctCount === 3) {
+                scoreMessageEl.innerText = "Sempurna! Kamu Jenius Budaya!";
+                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/864/864837.png"; // Piala Emas
+            } else if (correctCount === 2) {
+                scoreMessageEl.innerText = "Bagus Sekali! Hampir Sempurna.";
+                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/179/179249.png"; // Jempol
+            } else if (correctCount === 1) {
+                scoreMessageEl.innerText = "Lumayan, Tetap Semangat Belajar!";
+                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/4241/4241584.png"; // Semangat
+            } else {
+                scoreMessageEl.innerText = "Jangan Menyerah, Coba Lagi Ya!";
+                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/179/179251.png"; // Sedih
             }
-            loadQuestion();
         }
 
-        // Tombol 'Ulangi' (Soal yang sama)
-        function restartLevel() {
-            loadQuestion();
-        }
-
-        // Start
-        loadQuestion();
+        // Mulai
+        document.addEventListener('DOMContentLoaded', loadQuestion);
     </script>
 
 </x-layout>

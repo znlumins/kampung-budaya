@@ -9,13 +9,17 @@ class Ulasan extends Model
 {
     use HasFactory;
 
-    /**
-     * Atribut yang boleh diisi secara massal.
-     */
     protected $fillable = [
-        'nama',
-        'status',
-        'rating',
-        'deskripsi',
+        'user_id',  // PENTING: Untuk menghubungkan ulasan dengan akun user
+        'content',  // Isi ulasan (kita pakai 'content' biar standar, ganti 'deskripsi')
+        'rating'    // Bintang 1-5
     ];
+
+    /**
+     * Relasi: Sebuah Ulasan dimiliki oleh satu User
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

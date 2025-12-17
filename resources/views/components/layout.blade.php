@@ -1,4 +1,3 @@
-<!-- Perhatikan baris ini: defaultnya Footer ditampilkan (false) -->
 @props(['hideFooter' => false])
 
 <!DOCTYPE html>
@@ -17,13 +16,13 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    {{-- Memuat semua file aset yang dibutuhkan, termasuk untuk React --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/app.jsx', 'resources/js/welcomeAnimations.jsx'])
+    {{-- Memuat semua file aset yang dibutuhkan --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
         .bg-batik-pattern {
             background-color: #463C38;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='https://i.ibb.co.com/xSK32tCj/bunga-bunga.png'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -36,9 +35,12 @@
         <div class="max-w-[90rem] mx-auto px-6 h-20 flex justify-between items-center">
             
             <div class="flex items-center gap-8 lg:gap-10">
+                <!-- LOGO -->
                 <a href="/" class="flex-shrink-0 hover:scale-105 transition duration-300">
                     <img src="https://i.ibb.co.com/4w7k87yk/Group-23.png" alt="Logo Kampung Budaya" class="h-12 w-auto object-contain">
                 </a>
+
+                <!-- MENU LINKS DESKTOP -->
                 <ul class="hidden lg:flex items-center gap-6 text-[#3E2F2B] font-medium text-[14px]">
                     <li><a href="/" class="hover:text-[#A85D36] transition duration-300">Beranda</a></li>
                     <li><a href="/about" class="hover:text-[#A85D36] transition duration-300">Tentang kami</a></li>
@@ -50,26 +52,63 @@
             </div>
 
             <div class="flex items-center gap-3">
+                <!-- LOGIKA AUTHENTICATION (NAVBAR PINTAR) -->
                 @guest
+                    <!-- Jika BELUM Login -->
                     <a href="{{ route('register') }}" class="text-sm font-semibold text-[#3E2F2B] hover:text-[#A85D36] transition px-3 py-2">Register</a>
                     <a href="{{ route('login') }}" class="px-7 py-2 bg-[#3E2F2B] text-white rounded-full text-sm font-semibold hover:bg-[#2A1F1C] hover:shadow-md transition-all duration-300">Log in</a>
                 @endguest
+
                 @auth
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="px-7 py-2 bg-red-600 text-white rounded-full text-sm font-semibold hover:bg-red-700 hover:shadow-md transition-all duration-300" title="Logged in as {{ auth()->user()->name }}">
-                            Logout
+                    <!-- Jika SUDAH Login -->
+                    <div class="relative group">
+                        <!-- Trigger: Nama User -->
+                        <button class="flex items-center gap-2 text-[#3E2F2B] font-bold hover:text-[#A85D36] transition px-3 py-2">
+                            <span>Hi, {{ Str::limit(auth()->user()->name, 10) }}</span>
+                            <ion-icon name="chevron-down-outline" class="text-sm"></ion-icon>
                         </button>
-                    </form>
+
+                        <!-- Dropdown Menu -->
+                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl py-2 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 z-50 transform origin-top-right border border-gray-100">
+                            
+                            <!-- 1. Menu Khusus Admin -->
+                            @if(auth()->user()->role === \App\Enums\Role::ADMIN)
+                                <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition">
+                                    <div class="flex items-center gap-2">
+                                        <ion-icon name="grid-outline"></ion-icon>
+                                        Admin Panel
+                                    </div>
+                                </a>
+                                <div class="border-b border-gray-100 my-1"></div>
+                            @endif
+
+                            <!-- 2. Tombol Logout -->
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="w-full text-left block px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition flex items-center gap-2">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 @endauth
+
+                <!-- Hamburger Menu Mobile -->
                 <button id="mobile-menu-btn" class="lg:hidden text-[#3E2F2B] text-2xl focus:outline-none ml-2">
                     <ion-icon name="menu"></ion-icon>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden lg:hidden bg-[#FFFBE6] border-t border-[#E6DCC3] absolute w-full left-0 shadow-lg">
-            {{-- (Kode menu mobile kamu, sudah benar) --}}
+        <!-- MOBILE MENU (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#FFFBE6] border-t border-[#E6DCC3] absolute w-full left-0 shadow-lg p-4 flex flex-col gap-4 z-40">
+            <a href="/" class="text-[#3E2F2B] font-medium hover:text-[#A85D36]">Beranda</a>
+            <a href="/about" class="text-[#3E2F2B] font-medium hover:text-[#A85D36]">Tentang kami</a>
+            <a href="/galeri-seni" class="text-[#3E2F2B] font-medium hover:text-[#A85D36]">Galeri Seni</a>
+            <a href="/pentas-seni" class="text-[#3E2F2B] font-medium hover:text-[#A85D36]">Pentas Seni</a>
+            <a href="/ulasan" class="text-[#3E2F2B] font-medium hover:text-[#A85D36]">Ulasan</a>
+            <a href="/kuliner" class="text-[#3E2F2B] font-medium hover:text-[#A85D36]">Kuliner</a>
         </div>
     </nav>
 
