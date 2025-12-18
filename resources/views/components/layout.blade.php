@@ -139,19 +139,19 @@
                 </div>
             </div>
             <div class="flex flex-col gap-4 w-full md:w-auto">
-                <a href="#" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
+                <a href="https://www.instagram.com/kampungbudoyo45" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
                     <div class="w-8 h-8 flex justify-center items-center bg-white/10 rounded-full group-hover:bg-white group-hover:text-pink-600 transition duration-300">
                         <ion-icon name="logo-instagram" class="text-xl"></ion-icon>
                     </div>
                     <span class="text-sm font-medium">kampungbudoyo45</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
+                <a href="https://www.tiktok.com/@kampungbudoyo" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
                     <div class="w-8 h-8 flex justify-center items-center bg-white/10 rounded-full group-hover:bg-white group-hover:text-black transition duration-300">
                         <ion-icon name="logo-tiktok" class="text-xl"></ion-icon>
                     </div>
                     <span class="text-sm font-medium">kampungbudoyo</span>
                 </a>
-                <a href="#" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
+                <a href="https://youtu.be/mQuS2OWBAFY" class="flex items-center gap-3 group text-gray-200 hover:text-white transition">
                     <div class="w-8 h-8 flex justify-center items-center bg-white/10 rounded-full group-hover:bg-white group-hover:text-red-600 transition duration-300">
                         <ion-icon name="logo-youtube" class="text-xl"></ion-icon>
                     </div>
@@ -160,7 +160,7 @@
             </div>
         </div>
         <div class="relative z-10 text-center mt-12 pt-6 border-t border-white/10 text-xs text-gray-400">
-            &copy; 2024 Kampung Budaya Ketawang Gede. All rights reserved.
+            &copy; 2025 Kampung Budaya Ketawang Gede. All rights reserved.
         </div>
     </footer>
     @endif

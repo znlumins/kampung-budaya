@@ -212,16 +212,16 @@
             // Logika Pesan & Gambar berdasarkan skor
             if (correctCount === 3) {
                 scoreMessageEl.innerText = "Sempurna! Kamu Jenius Budaya!";
-                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/864/864837.png"; // Piala Emas
+                scoreImageEl.src = "https://png.pngtree.com/png-vector/20250408/ourlarge/pngtree-golden-award-medal-png-image_15968670.png"; // Piala Emas
             } else if (correctCount === 2) {
                 scoreMessageEl.innerText = "Bagus Sekali! Hampir Sempurna.";
-                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/179/179249.png"; // Jempol
+                scoreImageEl.src = "https://img.freepik.com/vektor-premium/emoticon-jempol-ke-atas_1303870-11.jpg?semt=ais_hybrid&w=740&q=80"; // Jempol
             } else if (correctCount === 1) {
                 scoreMessageEl.innerText = "Lumayan, Tetap Semangat Belajar!";
-                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/4241/4241584.png"; // Semangat
+                scoreImageEl.src = "https://img.freepik.com/vektor-premium/emoji-emoticon-bahagia-mengangkat-tinju-yang-mengepal-membuat-gerakan-menang-atau-merayakan_1303870-395.jpg?semt=ais_hybrid&w=740&q=80"; // Semangat
             } else {
                 scoreMessageEl.innerText = "Jangan Menyerah, Coba Lagi Ya!";
-                scoreImageEl.src = "https://cdn-icons-png.flaticon.com/512/179/179251.png"; // Sedih
+                scoreImageEl.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFaJ1ymYNq27_hiMJLfonju7M0XHfQDJ7Mqg&s"; // Sedih
             }
         }
 

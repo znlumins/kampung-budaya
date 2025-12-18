@@ -31,9 +31,9 @@
                 <h2 class="text-4xl font-bold mb-8 leading-snug">Kenapa Kampung Budaya Ketawang Gede?</h2>
                 <p class="text-gray-700 text-justify leading-relaxed mb-8">Kampung Budayo Ketapang Gede adalah bukti nyata bahwa sebuah kampung dapat menjadi sumber inspirasi dan pusat pembelajaran budaya yang tak lekang oleh waktu. Kami mengundang Anda untuk merasakan kedamaian, kekayaan, dan semangat pelestarian yang kami jaga erat.</p>
                 <div class="flex gap-5 text-3xl">
-                    <a href="#" class="hover:scale-110 transition"><ion-icon name="logo-instagram"></ion-icon></a>
-                    <a href="#" class="hover:scale-110 transition"><ion-icon name="logo-tiktok"></ion-icon></a>
-                    <a href="#" class="text-red-600 hover:scale-110 transition"><ion-icon name="logo-youtube"></ion-icon></a>
+                    <a href="https://www.instagram.com/kampungbudoyo45" target="_blank" class="hover:scale-110 transition text-pink-600"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="https://www.tiktok.com/@kampungbudoyo" target="_blank" class="hover:scale-110 transition text-black"><ion-icon name="logo-tiktok"></ion-icon></a>
+                    <a href="https://youtu.be/mQuS2OWBAFY" target="_blank" class="text-red-600 hover:scale-110 transition"><ion-icon name="logo-youtube"></ion-icon></a>
                 </div>
             </div>
             <div id="tentang-right-cards" class="lg:col-span-7 space-y-5">

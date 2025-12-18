@@ -36,7 +36,7 @@
             
             <a href="/galeri-detail" class="group cursor-pointer block">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://i.ibb.co.com/qYSNZBLc/Rectangle-76-3.png?q=80&w=1200" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Wayang Suket Mbah Jo</h3>
             </a>
@@ -44,7 +44,7 @@
             <!-- Card 2: Keroncong (Alt) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://i.ibb.co.com/9kqtb48y/Rectangle-78.png?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Keroncong</h3>
             </div>
@@ -52,7 +52,7 @@
             <!-- Card 3: Geng-Gong (Gamelan) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://i.ibb.co.com/v6v67FTP/Rectangle-80.png?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Geng-Gong</h3>
             </div>
@@ -60,7 +60,7 @@
             <!-- Card 4: Perkusi -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://i.ibb.co.com/Rp2FK8Dm/Rectangle-82.png?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Perkusi</h3>
             </div>
@@ -68,7 +68,7 @@
             <!-- Card 5: Aksara FIB (Wayang Suket Detail) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <img src="https://i.ibb.co.com/xSsygGNX/Rectangle-19.png?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Aksara FIB</h3>
             </div>
@@ -76,7 +76,7 @@
             <!-- Card 6: Aksara FIB (Tarot/Kartu) -->
             <div class="group cursor-pointer">
                 <div class="h-64 rounded-[2rem] overflow-hidden shadow-lg mb-4 border border-white/20">
-                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 sepia">
+                    <img src="https://i.ibb.co.com/1trLQLt6/Rectangle-86.png?q=80&w=600" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 sepia">
                 </div>
                 <h3 class="text-xl font-medium text-[#3E2F2B] pl-2">Aksara FIB</h3>
             </div>
